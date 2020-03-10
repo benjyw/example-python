@@ -1,15 +1,26 @@
+import random
 
-from translate import Translator
+from util.resource_util import get_lines
+from helloworld.lang import LanguageSelector
 
 
-class Greeting:
-    def __init__(self, greeting: str):
-        self._greeting = greeting
+class Greeter:
+    def __init__(self):
+        self._greeting_selector = GreetingSelector()
+        self._language_selector = LanguageSelector()
 
-    def translated_greeting(self, to_lang: str) -> str:
-        translator = Translator(to_lang)
-        return translator.translate(self._greeting)
+    def translated_greeting(self) -> str:
+        return self._language_selector.translate_to_random_language(self._greeting_selector.pick_greeting())
 
-    def greet(self, name: str, to_lang: str=None) -> str:
-        greeting = self.translated_greeting(to_lang) if to_lang else self._greeting
+    def greet(self, name: str) -> str:
+        greeting = self.translated_greeting()
         return f'{greeting}, {name}!'
+
+
+class GreetingSelector:
+    def __init__(self):
+        self._greetings = get_lines(__name__, 'greetings.txt')
+
+    def pick_greeting(self):
+        return random.choice(self._greetings)
+

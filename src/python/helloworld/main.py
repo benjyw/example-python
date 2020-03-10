@@ -1,11 +1,13 @@
 
-from helloworld.greeting import Greeting
+from colors import green
+
+from helloworld.greeting import Greeter
 
 
 def say_hello():
-    greeting = Greeting('hello')
-    sentence = greeting.greet('world', to_lang="es")
-    print(sentence)
+    greeter = Greeter()
+    sentence = greeter.greet('world')
+    print(green(sentence))
 
 
 if __name__ == '__main__':

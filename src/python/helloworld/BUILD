@@ -2,14 +2,36 @@ python_library(
     # name defaults to the name of this directory, i.e., `helloworld`.
     # sources defaults to ['*.py', '!*_test.py', '!test_*.py', '!conftest.py'].
     dependencies = [
-        '3rdparty/python:translate'
+        "3rdparty/python:translate",
+        ":greetings",
+        ":langs",
+        "src/python/util"
+    ]
+)
+
+python_tests(
+    name = 'tests',
+    # sources defaults to ['*_test.py', 'test_*.py', 'conftest.py'].
+    dependencies = [
+        ":helloworld"
     ]
 )
 
 python_binary(
-    name = 'main',
-    entry_point = 'helloworld.main',
+    name = "main",
+    entry_point = "helloworld.main",
     dependencies = [
-        ':helloworld'
+        "3rdparty/python:ansicolors",
+        ":helloworld",
     ]
+)
+
+resources(
+    name = 'greetings',
+    sources = ['greetings.txt'],
+)
+
+resources(
+    name = 'langs',
+    sources = ['langs.txt'],
 )
