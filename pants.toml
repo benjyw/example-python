@@ -1,8 +1,8 @@
 [GLOBAL]
-pants_version = "1.26.0.dev2"
+pants_version = "1.26.0rc1"
 v1 =  false  # Turn off the v1 execution engine.
 v2 = true  # Enable the v2 execution engine.
-v2_ui = true  # Enable the v2 exeuction engine's terminal-based UI.
+v2_ui = true  # Enable the v2 execution engine's terminal-based UI.
 
 backend_packages = []  # Deregister all v1 backends.
 
@@ -11,5 +11,3 @@ backend_packages2 = ['pants.backend.python']
 
 # List v2 plugins here.
 plugins2 = []
-
-build_file_imports = "error"
