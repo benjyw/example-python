@@ -30,8 +30,3 @@ resources(
     name = 'greetings',
     sources = ['greetings.txt'],
 )
-
-resources(
-    name = 'langs',
-    sources = ['langs.txt'],
-)

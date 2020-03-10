@@ -3,5 +3,29 @@ python_library(
     # sources defaults to ['*.py', '!*_test.py', '!test_*.py', '!conftest.py'].
     dependencies = [
         "3rdparty/python:setuptools",
+        "3rdparty/python:translate",
+        ":langs"
     ]
+)
+
+
+python_tests(
+    name = 'tests',
+    # sources defaults to ['*_test.py', 'test_*.py', 'conftest.py'].
+    dependencies = [
+        ":resources_test",
+        ":util",
+    ]
+)
+
+
+resources(
+    name = 'langs',
+    sources = ['langs.txt'],
+)
+
+
+resources(
+    name = 'resources_test',
+    sources = ['resources_test.txt'],
 )
