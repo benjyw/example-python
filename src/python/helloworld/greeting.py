@@ -1,7 +1,7 @@
 import random
 
-from util.resource_util import get_lines
 from helloworld.lang import LanguageSelector
+from util.resource_util import get_lines
 
 
 class Greeter:

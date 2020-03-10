@@ -9,7 +9,11 @@ backend_packages = []  # Deregister all v1 backends.
 # List v2 backends here.
 backend_packages2 = [
   'pants.backend.python',
+  'pants.backend.python.lint.docformatter',
   'pants.backend.python.lint.black',
+  'pants.backend.python.lint.flake8',
+  'pants.backend.python.lint.isort',
+  'pants.backend.python.lint.pylint',
 ]
 
 # List v2 plugins here.

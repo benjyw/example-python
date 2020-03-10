@@ -1,7 +1,6 @@
 import random
 
 from translate import Translator
-
 from util.resource_util import get_lines
 
 
