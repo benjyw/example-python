@@ -7,7 +7,10 @@ v2_ui = true  # Enable the v2 execution engine's terminal-based UI.
 backend_packages = []  # Deregister all v1 backends.
 
 # List v2 backends here.
-backend_packages2 = ['pants.backend.python']
+backend_packages2 = [
+  'pants.backend.python',
+  'pants.backend.python.lint.black',
+]
 
 # List v2 plugins here.
 plugins2 = []

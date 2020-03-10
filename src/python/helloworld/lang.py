@@ -7,7 +7,7 @@ from util.resource_util import get_lines
 
 class LanguageSelector:
     def __init__(self):
-        self._langs = get_lines(__name__, 'langs.txt')
+        self._langs = get_lines(__name__, "langs.txt")
 
     def _pick_language(self):
         return random.choice(self._langs)
