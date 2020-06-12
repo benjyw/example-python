@@ -14,3 +14,9 @@
 #   )
 
 python_requirements()
+
+
+files(
+    name = "pytest_ini",
+    sources = ["pytest.ini"]
+)
