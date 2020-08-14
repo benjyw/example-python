@@ -16,5 +16,8 @@ __pycache__/
 .idea/
 *.iml
 
-# Local database files
-db.sqlite3
+# Local databases.
+*.sqlite3
+
+# MacOS attribute files
+.DS_Store

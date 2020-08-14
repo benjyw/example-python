@@ -2,15 +2,10 @@
 # Licensed under the Apache License, Version 2.0 (see LICENSE).
 
 [GLOBAL]
-pants_version = "1.30.0"
-v1 =  false  # Turn off the v1 execution engine.
-v2 = true  # Enable the v2 execution engine.
+pants_version = "2.0.0.dev7"
 pantsd = true  # Enable the Pants daemon for better performance.
 
-backend_packages = []  # Deregister all v1 backends.
-
-# List v2 backends here.
-backend_packages2.add = [
+backend_packages.add = [
   'pants.backend.awslambda.python',
   'pants.backend.codegen.protobuf.python',
   'pants.backend.python',
@@ -20,19 +15,16 @@ backend_packages2.add = [
   'pants.backend.python.lint.isort',
 ]
 
-# List v2 plugins here.
-plugins2 = []
-
 [source]
-# The Python source root is the repo root. See https://pants.readme.io/docs/source-roots.
+# The Python source root is the repo root. See https://www.pantsbuild.org/docs/source-roots.
 root_patterns = ["/"]
 
 [python-setup]
 # The default interpreter compatibility for code in this repo. Individual targets can ovverride
 #  this with the `compatibility` field. See
-#  https://pants.readme.io/docs/python-interpreter-compatibility.
+#  https://www.pantsbuild.org/docs/python-interpreter-compatibility.
 interpreter_constraints = [">=3.7"]
-# Use a lockfile. See https://pants.readme.io/docs/python-third-party-dependencies.
+# Use a lockfile. See https://www.pantsbuild.org/docs/python-third-party-dependencies.
 requirement_constraints = "constraints.txt"
 
 [pytest]
@@ -48,3 +40,6 @@ config = ".flake8"
 
 [isort]
 config = [".isort.cfg"]
+
+[python-infer]
+imports = false

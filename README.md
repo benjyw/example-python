@@ -141,12 +141,12 @@ Try these out in this repo!
 ## Run `setup.py` commands
 
 ```
-./pants setup-py --args="bdist_wheel" helloworld/util  # Build a wheel.
+./pants setup-py --args="bdist_wheel" helloworld/util:dist  # Build a wheel.
 ```
 
 ## Build an AWS Lambda
 
-(This example only works on Linux because it has an sdist. See https://pants.readme.io/docs/awslambda-python.)
+(This example only works on Linux because it has an sdist. See https://www.pantsbuild.org/docs/awslambda-python.)
 
 ```
 ./pants awslambda helloworld:helloworld-awslambda
