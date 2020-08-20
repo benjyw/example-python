@@ -15,6 +15,7 @@ python_tests(
         ":greet",
         "helloworld/django",  # For settings.py.
         "helloworld/django/greet/migrations",
+        "//:pytest",
         "//:pytest_ini",
     ]
 )
