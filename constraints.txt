@@ -3,7 +3,8 @@ appdirs==1.4.4
 asgiref==3.2.10
 attrs==19.3.0
 certifi==2020.6.20
-cfgv==3.2.0
+cfgv==2.0.1 ; python_version == '2.7'
+cfgv==3.2.0 ; python_version > '2.7'
 chardet==3.0.4
 click==7.1.2
 distlib==0.3.1
@@ -12,13 +13,15 @@ filelock==3.0.12
 identify==1.4.25
 idna==2.10
 importlib-metadata==1.7.0
+importlib-resources==1.5.0 ; python_version < '3.7'
 lxml==4.5.2
 more-itertools==8.4.0
 nodeenv==1.4.0
 packaging==20.4
 pip==19.0.3
 pluggy==0.13.1
-pre-commit==2.6.0
+pre-commit==1.21.0 ; python_version == '2.7'
+pre-commit==2.3.0 ; python_version > '2.7'
 protobuf==3.12.4
 py==1.9.0
 pyparsing==2.4.7
