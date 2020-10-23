@@ -10,7 +10,7 @@
 # Python files
 __pycache__/
 *.pyc
-/.venv/
+.venv/
 
 # Editors
 .idea/
@@ -21,3 +21,4 @@ __pycache__/
 
 # MacOS attribute files
 .DS_Store
+
